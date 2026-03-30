@@ -1,10 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Droplets, Sparkles, Shield, Clock, ChevronRight } from 'lucide-react'
+import { Droplets, Sparkles, Shield, Clock } from 'lucide-react'
 
 export default function Recommendations(){
-  const navigate = useNavigate()
-  
   const recs = [
     {
       title: 'Salicylic Acid Cleanser',
@@ -47,25 +44,24 @@ export default function Recommendations(){
   return (
     <div className='container recommendations'>
       <div className='dashboard-header'>
-        <span className='sub' style={{fontSize:'12px', color:'#888', marginBottom:'4px'}}>Personalized for your oily, acne-prone skin</span>
         <h2>Recommendations</h2>
       </div>
 
       <div className='rec-list'>
         {recs.map((rec, i) => (
-          <div className='rec-card' key={i} style={{background:'#FFF', borderRadius:'16px', padding:'20px', marginBottom:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.03)'}}>
-            <div className='rec-header' style={{display:'flex', gap:'16px', marginBottom:'12px'}}>
-              <div className='rec-icon' style={{width:'56px', height:'56px', background:rec.bg, borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center'}}>
+          <div className='rec-card-item' key={i}>
+            <div className='rec-header-row'>
+              <div className='rec-icon-box' style={{background:rec.bg}}>
                 {getIcon(rec.iconKey, rec.color)}
               </div>
-              <div className='rec-title' style={{flex:1}}>
-                <span className='rec-tag' style={{fontSize:'10px', fontWeight:'700', color:rec.color, background:rec.bg, padding:'4px 8px', borderRadius:'6px', letterSpacing:'0.5px'}}>{rec.type}</span>
-                <h4 style={{margin:'8px 0 0', fontSize:'16px', color:'#240808'}}>{rec.title}</h4>
+              <div className='rec-title-wrapper'>
+                <h4 className='rec-title-text'>{rec.title}</h4>
+                <span className='rec-tag-badge' style={{color:rec.color, background:rec.bg}}>{rec.type}</span>
               </div>
             </div>
-            <p className='rec-desc' style={{fontSize:'13px', color:'#666', lineHeight:'1.5', margin:'0 0 16px'}}>{rec.desc}</p>
-            <div className='rec-usage' style={{background:'#F9F9F9', padding:'12px', borderRadius:'8px', fontSize:'12px', color:'#555', display:'flex', gap:'8px'}}>
-              <Clock size={14} color='#888' style={{marginTop:'2px'}} />
+            <p className='rec-description'>{rec.desc}</p>
+            <div className='rec-usage-box'>
+              <Clock size={14} color='#888' className='rec-usage-icon' />
               <span><strong>How to use:</strong> {rec.usage}</span>
             </div>
           </div>

@@ -19,15 +19,12 @@ export default function Dashboard(){
   return (
     <div className="container dashboard">
       <header className="dashboard-header">
-        <span className="sub" style={{display:'flex', alignItems:'center', gap:'6px', color:'#AAA'}}>
-          Good morning <Sparkles size={14} color="#FFA726" />
-        </span>
         <h2>Your Skin Today</h2>
       </header>
 
       {/* Main Skin Type Card - Beige Background */}
       <section className="skin-type-card">
-        <div className="skin-type-icon" style={{background:'#FFF'}}>
+        <div className="skin-type-icon skin-icon-white">
           <Sparkles size={24} color="#E65100" />
         </div>
         <div className="skin-type-label">SKIN TYPE</div>
@@ -35,44 +32,44 @@ export default function Dashboard(){
         <p className="skin-type-desc">{skinData.desc}</p>
         
         {/* Inner Stats Row */}
-        <div className="health-row" style={{marginTop:'24px', display:'flex', gap:'16px'}}>
-          <div className="health-card" style={{flex:1, background:'#FFF', padding:'16px', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.03)'}}>
-            <div className="health-label" style={{display:'flex', alignItems:'center', gap:'6px', fontSize:'12px', color:'#888', marginBottom:'8px'}}>
+        <div className="health-stats-row">
+          <div className="health-card-stat">
+            <div className="health-stat-label">
               <Droplets size={16} color="#2E86AB" /> Hydration
             </div>
-            <div className="health-val" style={{fontSize:'24px', fontWeight:'700', color:'#240808', fontFamily:'Playfair Display, serif'}}>{skinData.hydration}%</div>
-            <div className="mini-progress" style={{height:'6px', background:'#f0f0f0', borderRadius:'4px', overflow:'hidden'}}>
-              <div className="mini-bar" style={{width: `${skinData.hydration}%`, height:'100%', background:'#2E86AB'}}></div>
+            <div className="health-stat-value">{skinData.hydration}%</div>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{width: `${skinData.hydration}%`, background:'#2E86AB'}}></div>
             </div>
           </div>
-          <div className="health-card" style={{flex:1, background:'#FFF', padding:'16px', borderRadius:'16px', boxShadow:'0 4px 12px rgba(0,0,0,0.03)'}}>
-            <div className="health-label" style={{display:'flex', alignItems:'center', gap:'6px', fontSize:'12px', color:'#888', marginBottom:'8px'}}>
+          <div className="health-card-stat">
+            <div className="health-stat-label">
               <Activity size={16} color="#43A047" /> Health
             </div>
-            <div className="health-val" style={{fontSize:'24px', fontWeight:'700', color:'#240808', fontFamily:'Playfair Display, serif'}}>{skinData.health}%</div>
-            <div className="mini-progress" style={{height:'6px', background:'#f0f0f0', borderRadius:'4px', overflow:'hidden'}}>
-              <div className="mini-bar" style={{width: `${skinData.health}%`, height:'100%', background:'#43A047'}}></div>
+            <div className="health-stat-value">{skinData.health}%</div>
+            <div className="progress-bar">
+              <div className="progress-fill" style={{width: `${skinData.health}%`, background:'#43A047'}}></div>
             </div>
           </div>
         </div>
         
-        <div style={{textAlign:'right', fontSize:'11px', color:'#A1887F', marginTop:'16px'}}>
+        <div className="last-analyzed">
           Last analyzed {skinData.lastScan}
         </div>
       </section>
 
       {/* Main CTA Button - Gradient */}
-      <button className="btn-cta" onClick={()=>navigate('/capture')} style={{display:'flex', alignItems:'center', justifyContent:'center', gap:'12px'}}>
+      <button className="btn-cta cta-button" onClick={()=>navigate('/capture')}>
         <Camera size={20} color="#240808" />
         Start New Analysis
       </button>
 
       {/* Tip Section */}
-      <section className="tip-banner" style={{background:'#FFF', borderRadius:'16px', padding:'20px', boxShadow:'0 4px 12px rgba(0,0,0,0.03)', marginTop:'24px'}}>
-        <h4 style={{color:'#F57C00', fontSize:'14px', display:'flex', alignItems:'center', gap:'8px', margin:0, marginBottom:'8px'}}>
+      <section className="tip-card">
+        <h4 className="tip-title">
           <Sun size={18} color="#F57C00" /> Daily Skincare Tip
         </h4>
-        <p style={{color:'#666', fontSize:'14px', lineHeight:'1.5', margin:0}}>{tip}</p>
+        <p className="tip-text">{tip}</p>
       </section>
     </div>
   )

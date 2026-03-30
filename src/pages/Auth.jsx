@@ -30,7 +30,7 @@ export default function Auth(){
       <div className="auth-left">
         <div className="auth-logo-wrapper">
           <img src="/assets/skinpal-girl-illustration.png" className="logo-large" alt="SkinPal Logo" />
-          <h1 className="logo-text">SKIN PAL</h1>
+          <h1 className="logo-text">SKINPAL</h1>
           <p className="logo-sub">BECAUSE EVERY SKIN IS UNIQUE</p>
         </div>
       </div>
@@ -43,7 +43,7 @@ export default function Auth(){
             <p>Login to continue your skin journey</p>
           </div>
 
-          {message && <div style={{background:'#ffebee', color:'#c62828', padding:'10px', borderRadius:'8px', marginBottom:'16px', fontSize:'14px', textAlign:'center'}}>{message}</div>}
+          {message && <div className="error-message">{message}</div>}
 
           <form onSubmit={handleLogin}>
             <div className="form-group">

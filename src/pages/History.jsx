@@ -17,11 +17,11 @@ export default function History(){
         <span className='sub'>Track your skin progress over time</span>
       </div>
 
-      <div className='chart-card' style={{background:'#FFF', borderRadius:'20px', padding:'24px', marginBottom:'24px', boxShadow:'0 4px 12px rgba(0,0,0,0.03)'}}>
-        <h4 style={{fontSize:'11px', color:'#999', letterSpacing:'1px', marginBottom:'16px'}}>HEALTH SCORE TREND</h4>
+      <div className='chart-card'>
+        <h4 className='chart-title'>HEALTH SCORE TREND</h4>
         
         {/* Simple SVG Chart */}
-        <div style={{height:'120px', padding:'10px 0'}}>
+        <div className='chart-container'>
           <svg width='100%' height='100%' viewBox='0 0 400 100' preserveAspectRatio='none'>
              {/* Simple Line */}
              <path 
@@ -39,7 +39,7 @@ export default function History(){
           </svg>
         </div>
         
-        <div style={{display:'flex', justifyContent:'space-between', marginTop:'8px', fontSize:'11px', color:'#999'}}>
+        <div className='chart-dates'>
             <span>Jan 15</span>
             <span>Feb 28</span>
         </div>
@@ -47,13 +47,13 @@ export default function History(){
 
       <div className='history-list'>
         {scans.map((s,i)=>(
-          <div className='history-item' key={i} style={{background:'#FFF', padding:'16px', borderRadius:'16px', marginBottom:'12px', display:'flex', alignItems:'center', boxShadow:'0 2px 8px rgba(0,0,0,0.02)'}}>
-            <div className='history-icon-box' style={{width:'48px', height:'48px', background:'#FFEBEE', borderRadius:'12px', display:'flex', alignItems:'center', justifyContent:'center', marginRight:'16px', color:'#D32F2F'}}>
+          <div className='history-item-card' key={i}>
+            <div className='history-icon-box'>
               <Calendar size={20} />
             </div>
-             <div className='history-content' style={{flex:1}}>
-               <div className='history-date' style={{fontWeight:'600', fontSize:'14px', marginBottom:'4px'}}>{s.date}</div>
-               <div className='history-detail' style={{fontSize:'12px', color:'#888'}}>{s.type} {'\u2022'} {s.concern} {'\u2022'} <span style={{color: s.score > 80 ? '#43A047' : '#D32F2F', fontWeight:'600'}}>{s.score}%</span></div>
+             <div className='history-content'>
+               <div className='history-date-label'>{s.date}</div>
+               <div className='history-detail-text'>{s.type} {'\u2022'} {s.concern} {'\u2022'} <span className={`history-score ${s.score > 80 ? 'history-score-good' : 'history-score-bad'}`}>{s.score}%</span></div>
             </div>
             <div className='history-arrow'>
               <ChevronRight size={20} color='#CCC' />
