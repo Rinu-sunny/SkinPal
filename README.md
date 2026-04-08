@@ -1,7 +1,7 @@
 # SkinPal 
 
 An intelligent skin analysis application that uses machine learning to detect skin types, provide personalized product recommendations, and help users maintain healthy skin through data-driven insights.
-# Team Members
+## Team Members
 - Arjun Babu
 - Daya Manoj
 - Mohammed Ijlan
