@@ -1,0 +1,611 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply w-full text-center bg-deep-accent text-white px-4 py-4 rounded-btn border-none font-semibold text-base;
+  }
+
+  .btn-cta {
+    @apply w-full flex items-center justify-center gap-3 px-5 py-5 rounded-2xl border-none font-bold text-lg shadow-lg text-deep-accent;
+    background: linear-gradient(135deg, rgb(215, 204, 200), rgb(188, 170, 164));
+  }
+
+  .btn-cta svg {
+    @apply shrink-0;
+  }
+
+  .btn-secondary {
+    @apply flex-1 bg-white border border-gray-200 px-4 py-4 rounded-2xl font-semibold text-deep-accent inline-flex items-center justify-center gap-2 shadow-sm;
+  }
+
+  .btn-auth {
+    @apply w-full bg-light-blue text-primary-text font-bold py-4 px-4 rounded-btn border-none text-base mt-8 cursor-pointer transition-opacity hover:opacity-90;
+  }
+
+  .btn-logout {
+    @apply w-full border border-red-200 text-red-600 bg-white px-4 py-4 rounded-btn mt-8 font-bold cursor-pointer;
+  }
+
+  .card {
+    @apply bg-white px-6 py-6 rounded-2xl mb-5 shadow-md;
+  }
+
+  .container {
+    @apply max-w-2xl mx-auto px-5 pb-32;
+  }
+
+  .form-input {
+    @apply w-full bg-beige border border-transparent rounded-input px-5 py-4 text-base text-primary-text outline-none font-sans;
+  }
+
+  .form-input::placeholder {
+    @apply text-amber-700;
+  }
+
+  .form-input:focus {
+    @apply border-deep-accent;
+  }
+
+  .form-group {
+    @apply mb-6;
+  }
+
+  .form-group label {
+    @apply block font-semibold text-sm mb-2 text-deep-accent;
+  }
+
+  .auth-container {
+    @apply flex min-h-screen w-full overflow-x-hidden;
+  }
+
+  .auth-left {
+    @apply flex-1 relative flex flex-col items-center justify-between px-10 py-20;
+    background-color: rgb(234, 226, 222);
+    background-image: url('/assets/skinpal-split-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+  }
+
+  .auth-left::before {
+    @apply absolute inset-0 rounded-none;
+    background: rgba(255, 253, 231, 0.7);
+    z-index: 1;
+  }
+
+  .auth-right {
+    @apply flex-1 bg-bg-page flex items-center justify-center px-10 min-h-screen;
+  }
+
+  .login-card {
+    @apply w-full max-w-xl px-10 py-10 bg-white border border-gray-100 rounded-3xl shadow-lg;
+  }
+
+  .login-header {
+    @apply text-center mb-10;
+  }
+
+  .auth-logo-wrapper {
+    @apply relative z-10 text-center flex flex-col items-center;
+    margin-top: auto;
+    margin-bottom: auto;
+    transform: translateY(-28px) scale(1.08);
+    transform-origin: center center;
+  }
+
+  .logo-large {
+    @apply h-auto mx-auto block;
+    width: min(100%, 760px);
+    max-width: none;
+    transform: scale(1.22);
+    transform-origin: center 45%;
+    margin-bottom: -140px;
+  }
+
+  .logo-text {
+    @apply font-serif text-5xl text-deep-accent m-0 leading-tight tracking-tight -mt-6;
+    text-shadow: 0 2px 6px rgba(255, 255, 255, 0.55);
+  }
+
+  .logo-sub {
+    @apply text-sm uppercase text-deep-accent font-bold tracking-widest mt-1;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+  }
+
+  .login-header h1 {
+    @apply text-4xl font-extrabold mb-2;
+  }
+
+  .login-header p {
+    @apply text-gray-500 text-base;
+  }
+
+  .forgot-link {
+    @apply block text-right text-sm text-amber-700 no-underline font-semibold mt-2;
+  }
+
+  .dashboard-header {
+    @apply mb-5;
+  }
+
+  .dashboard {
+    @apply pt-0;
+  }
+
+  .greeting-label {
+    @apply inline-flex items-center justify-center w-full gap-2 text-xs sm:text-sm font-semibold uppercase tracking-wide text-amber-700 mb-2;
+  }
+
+  .dashboard-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .skin-type-card {
+    @apply bg-beige px-6 py-6 rounded-2xl mb-4 relative overflow-hidden;
+  }
+
+  .skin-type-label {
+    @apply text-xs uppercase tracking-wider text-amber-900 mb-2;
+  }
+
+  .skin-type-val {
+    @apply font-serif text-3xl text-deep-accent mt-0 mb-1;
+  }
+
+  .skin-type-desc {
+    @apply text-sm text-amber-900;
+  }
+
+  .skin-type-icon {
+    @apply absolute top-6 right-6 w-10 h-10 bg-white bg-opacity-40 backdrop-blur rounded-full flex items-center justify-center;
+  }
+
+  .skin-icon-white {
+    @apply bg-white bg-opacity-70;
+  }
+
+  .health-stats-row {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5;
+  }
+
+  .last-analyzed {
+    @apply mt-5 text-xs sm:text-sm text-amber-900 font-medium;
+  }
+
+  .capture {
+    @apply pt-0;
+  }
+
+  .capture-header {
+    @apply mb-5;
+  }
+
+  .capture-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .capture-header p {
+    @apply text-lg text-amber-900 m-0;
+  }
+
+  .capture-dropzone {
+    @apply bg-white border-2 border-dashed border-gray-200 rounded-2xl px-6 py-8 text-center cursor-pointer transition-colors;
+  }
+
+  .capture-dropzone:hover {
+    @apply border-beige;
+  }
+
+  .capture-icon-placeholder {
+    @apply inline-flex items-center justify-center w-14 h-14 rounded-xl bg-amber-50 mb-3;
+  }
+
+  .capture-title {
+    @apply block text-2xl font-bold text-deep-accent leading-tight;
+  }
+
+  .capture-subtitle {
+    @apply block text-sm text-amber-900 mt-1;
+  }
+
+  .capture-actions {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4;
+  }
+
+  .capture-btn {
+    @apply text-xl py-5;
+  }
+
+  .capture-preview {
+    @apply bg-white rounded-2xl shadow-sm p-4;
+  }
+
+  .capture-preview img {
+    @apply w-full h-auto rounded-xl object-cover mb-4;
+    max-height: 420px;
+  }
+
+  .capture-analyze-btn {
+    @apply mt-1;
+  }
+
+  .guidelines {
+    @apply mt-6;
+  }
+
+  .guidelines h4 {
+    @apply font-serif text-3xl text-deep-accent m-0 mb-3;
+  }
+
+  .health-card-stat {
+    @apply flex-1 bg-white px-4 py-4 rounded-2xl shadow-sm;
+  }
+
+  .health-stat-label {
+    @apply flex items-center gap-1.5 text-xs text-gray-500 mb-2;
+  }
+
+  .health-stat-value {
+    @apply text-2xl font-bold text-deep-accent mb-2 font-serif;
+  }
+
+  .progress-bar {
+    @apply h-1.5 bg-gray-100 rounded overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded;
+  }
+
+  .guidelines-grid {
+    @apply grid grid-cols-1 gap-3;
+  }
+
+  .guideline-card {
+    @apply bg-white rounded-xl px-5 py-4 shadow-sm;
+  }
+
+  .guideline-point {
+    @apply flex items-center gap-2 text-base sm:text-lg text-primary-text py-2;
+  }
+
+  .guideline-point + .guideline-point {
+    @apply border-t border-gray-100;
+  }
+
+  .results-card {
+    @apply bg-white px-6 py-6 rounded-2xl shadow-md mb-6;
+  }
+
+  .page-header {
+    @apply mb-5;
+  }
+
+  .analysis-value {
+    @apply text-2xl text-gray-900 font-bold font-serif;
+  }
+
+  .profile-section {
+    @apply text-center mb-6 mt-6;
+  }
+
+  .profile-page {
+    @apply pt-0;
+  }
+
+  .profile-header {
+    @apply mb-5;
+  }
+
+  .profile-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .avatar-large {
+    @apply w-16 h-16 rounded-full bg-light-blue text-white flex items-center justify-center mx-auto mb-4;
+  }
+
+  .profile-name {
+    @apply text-2xl font-semibold text-deep-accent m-0 mb-1;
+  }
+
+  .profile-email {
+    @apply text-base text-primary-text m-0 mb-4;
+  }
+
+  .profile-stats-row {
+    @apply flex justify-between items-stretch mt-6 bg-white px-6 py-5 rounded-3xl shadow-sm border border-gray-100;
+  }
+
+  .stat-item {
+    @apply flex flex-col items-center flex-1 justify-center;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-deep-accent;
+  }
+
+  .stat-label {
+    @apply text-xs sm:text-sm font-semibold uppercase tracking-wide text-gray-500 mt-1;
+  }
+
+  .stat-progress {
+    @apply text-red-500;
+  }
+
+  .stat-divider {
+    @apply w-px bg-gray-200 mx-4;
+  }
+
+  .settings-container {
+    @apply bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 mt-4;
+  }
+
+  .setting-item-row {
+    @apply flex items-center px-5 py-4 border-b border-gray-100 cursor-pointer gap-3;
+  }
+
+  .setting-item-row:last-child {
+    @apply border-b-0;
+  }
+
+  .setting-icon {
+    @apply w-10 h-10 rounded-lg flex items-center justify-center shrink-0;
+  }
+
+  .setting-icon-notifications {
+    @apply bg-orange-50;
+  }
+
+  .setting-icon-privacy {
+    @apply bg-blue-50;
+  }
+
+  .setting-icon-help {
+    @apply bg-green-50;
+  }
+
+  .label {
+    @apply flex-1 min-w-0;
+  }
+
+  .setting-label-text {
+    @apply block text-base font-semibold text-deep-accent;
+  }
+
+  .setting-label-description {
+    @apply block text-sm text-gray-500;
+  }
+
+  .arrow {
+    @apply shrink-0 text-gray-300;
+  }
+
+  .btn-logout-btn {
+    @apply w-full mt-4 flex items-center justify-center gap-2 bg-white border border-red-200 text-red-600 px-4 py-3 rounded-2xl font-semibold cursor-pointer transition-colors hover:bg-red-50;
+  }
+
+  .error-message {
+    @apply bg-red-50 text-red-800 px-2.5 py-2.5 rounded-lg mb-4 text-sm text-center;
+  }
+
+  .tip-card {
+    @apply bg-white rounded-2xl px-5 py-5 shadow-sm mt-6;
+  }
+
+  .cta-button {
+    @apply mt-2;
+  }
+
+  .tip-title {
+    @apply flex items-center gap-2 font-semibold text-deep-accent text-base mb-2;
+  }
+
+  .tip-text {
+    @apply text-sm sm:text-base leading-relaxed text-amber-900 m-0;
+  }
+
+  .recommendations {
+    @apply pt-0 pb-6;
+  }
+
+  .rec-subtitle {
+    @apply block text-base text-amber-800 mb-2;
+  }
+
+  .recommendations .dashboard-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .rec-list {
+    @apply flex flex-col gap-4;
+  }
+
+  .rec-card-item {
+    @apply w-full max-w-2xl mx-auto bg-white rounded-3xl px-5 py-5 shadow-sm border border-gray-100;
+  }
+
+  .rec-header-row {
+    @apply flex items-start gap-4 mb-3;
+  }
+
+  .rec-icon-box {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center shrink-0;
+  }
+
+  .rec-title-wrapper {
+    @apply flex-1 min-w-0;
+  }
+
+  .rec-tag-badge {
+    @apply inline-flex items-center text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg mt-1;
+  }
+
+  .rec-title-text {
+    @apply m-0 font-serif text-2xl text-deep-accent leading-tight;
+  }
+
+  .rec-description {
+    @apply mt-1 mb-3 text-base text-slate-600 leading-relaxed;
+  }
+
+  .rec-usage-box {
+    @apply flex items-start gap-2 text-sm text-slate-600 bg-gray-50 rounded-lg px-3 py-2;
+  }
+
+  .rec-usage-icon {
+    @apply mt-0.5 shrink-0;
+  }
+
+  .history-page {
+    @apply pt-0;
+  }
+
+  .history-page .dashboard-header {
+    @apply mb-5;
+  }
+
+  .history-page .dashboard-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .dashboard-header,
+  .capture-header,
+  .profile-header,
+  .history-page .dashboard-header,
+  .page-header {
+    @apply text-center py-3;
+    position: relative;
+    isolation: isolate;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .dashboard-header::before,
+  .capture-header::before,
+  .profile-header::before,
+  .history-page .dashboard-header::before,
+  .page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: rgb(215, 204, 200);
+    z-index: -1;
+  }
+
+  .capture-header p,
+  .history-page .sub,
+  .page-header p {
+    @apply text-center m-0;
+  }
+
+  .dashboard-header h2,
+  .capture-header h2,
+  .profile-header h2,
+  .recommendations .dashboard-header h2,
+  .history-page .dashboard-header h2,
+  .page-header h2 {
+    @apply font-serif text-3xl font-bold text-deep-accent leading-tight m-0;
+  }
+
+  .history-page .sub {
+    @apply block mt-1 text-sm text-gray-500;
+  }
+
+  .chart-card {
+    @apply bg-white rounded-3xl px-6 py-6 shadow-sm border border-gray-100 mb-5;
+  }
+
+  .chart-title {
+    @apply m-0 mb-4 text-xs font-semibold uppercase tracking-widest text-gray-400;
+  }
+
+  .chart-container {
+    @apply w-full h-40;
+  }
+
+  .chart-dates {
+    @apply mt-2 flex items-center justify-between text-sm text-gray-400;
+  }
+
+  .history-list {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .history-item-card {
+    @apply bg-white rounded-2xl px-2.5 py-2.5 shadow-sm border border-gray-100 flex items-center gap-2;
+  }
+
+  .history-icon-box {
+    @apply w-8 h-8 rounded-lg bg-rose-50 text-rose-500 flex items-center justify-center shrink-0;
+  }
+
+  .history-icon-box svg {
+    @apply w-4 h-4;
+  }
+
+  .history-content {
+    @apply flex-1 min-w-0;
+  }
+
+  .history-date-label {
+    @apply text-sm sm:text-base font-semibold text-deep-accent;
+  }
+
+  .history-detail-text {
+    @apply text-[10px] sm:text-xs text-gray-500 mt-0.5;
+  }
+
+  .history-score {
+    @apply font-semibold;
+  }
+
+  .history-score-good {
+    @apply text-rose-400;
+  }
+
+  .history-score-bad {
+    @apply text-rose-400;
+  }
+
+  .history-arrow {
+    @apply shrink-0 text-gray-300;
+  }
+
+  .history-arrow svg {
+    @apply w-4 h-4;
+  }
+
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 w-full bg-white shadow-lg flex justify-around py-3 z-1000;
+  }
+
+  .nav-desktop {
+    @apply hidden;
+  }
+
+  .nav-desktop .brand {
+    @apply font-sans text-4xl text-primary-text font-medium;
+  }
+
+  .nav-desktop nav {
+    @apply flex items-center gap-8;
+  }
+
+  .nav-desktop nav a {
+    @apply text-primary-text no-underline font-medium text-base;
+  }
+
+  .nav-desktop nav a.active {
+    @apply text-deep-accent font-bold;
+  }
+}
