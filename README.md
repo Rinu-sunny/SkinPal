@@ -17,24 +17,19 @@ An intelligent skin analysis application that uses machine learning to detect sk
 
 ### Frontend
 - **React 18** — UI library
-- **Vite** — Fast build tool and dev server
-- **React Router** — Client-side routing
-- **Tailwind CSS** — Utility-first CSS framework
-- **Lucide React** — Icon library
-- **Supabase JS** — Authentication and database client
+- **Vite** — Build tool and dev server
+- **Tailwind CSS** — Styling
+- **Supabase JS** — Authentication
 
 ### Backend
 - **Python 3.9+** — Programming language
 - **Flask** — Web framework
-- **Flask-CORS** — Cross-origin resource sharing
 - **TensorFlow** — Machine learning framework
 - **OpenCV** — Image processing
-- **NumPy** — Numerical computing
-- **Supabase** — Backend-as-a-Service (Auth, Database)
+- **Supabase** — Backend-as-a-Service
 
 ### ML Model
 - **TensorFlow** — Deep learning model for skin type classification
-- **Pre-trained Model** — `skin_type_model_v2.h5`
 
 ## 📋 Prerequisites
 
@@ -204,31 +199,6 @@ SkinPal/
 - `GET /api/analytics` — Get analytics data (admin only)
 - `POST /api/products` — Add product (admin only)
 - `PUT /api/products/<id>` — Update product (admin only)
-
-## 🎯 Usage
-
-### For Users
-
-1. **Create Account**
-   - Go to the application
-   - Click "Sign Up"
-   - Enter email and password
-   - Verify email via Supabase
-
-2. **Analyze Skin**
-   - Go to "Capture" page
-   - Take a photo or upload an image
-   - Wait for analysis results
-
-3. **View Results**
-   - See skin type classification
-   - Get personalized product recommendations
-   - Track analysis history
-
-4. **Manage Profile**
-   - Update personal information
-   - View analysis history
-   - Manage preferences
 
 ## 📦 Building for Production
 
